@@ -42,6 +42,7 @@ export default [
       "no-underscore-dangle": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "react/jsx-no-comment-textnodes": "warn",
+      "max-len": ["error", { ignoreComments: true, code: 130 }],
     },
   },
 ];
