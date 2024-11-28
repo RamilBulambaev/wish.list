@@ -2,6 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
+import pluginI18next from "eslint-plugin-i18next";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -17,6 +18,7 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  pluginI18next.configs["flat/recommended"],
 
   {
     rules: {
@@ -39,6 +41,7 @@ export default [
       "import/no-extraneous-dependencies": "off",
       "no-underscore-dangle": "off",
       "@typescript-eslint/no-unused-vars": "off",
+      "react/jsx-no-comment-textnodes": "warn",
     },
   },
 ];
