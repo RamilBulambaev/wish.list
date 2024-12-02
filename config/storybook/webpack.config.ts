@@ -2,7 +2,6 @@ import path from "path";
 import { BuildPaths } from "./../build/types/config";
 import webpack, { RuleSetRule } from "webpack";
 import { buildCssLoaders } from "../build/loaders/buildCssLoader";
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export const storybookWebpack = ({
   config,
@@ -31,22 +30,10 @@ export const storybookWebpack = ({
       return rule;
     });
 
-  config.plugins?.push(
-    new BundleAnalyzerPlugin({
-      analyzerMode: "static",
-      openAnalyzer: false,
-    })
-  );
-
   config.module!.rules.push({
     test: /\.svg$/,
     use: ["@svgr/webpack"],
   });
-
-  config.optimization = {
-    ...config.optimization,
-    minimize: true,
-  };
 
   return config;
 };
