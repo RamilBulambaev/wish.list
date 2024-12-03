@@ -4,13 +4,13 @@ import { I18nextProvider } from "react-i18next";
 import { MemoryRouter } from "react-router-dom";
 import i18nForTest from "shared/config/i18n/i18nForTest";
 
-export interface ComponentRenderOptions {
+export interface componentRenderOptions {
   route?: string;
 }
 
 export function componentRender(
   component: ReactNode,
-  options: ComponentRenderOptions = {}
+  options: componentRenderOptions = {}
 ) {
   const { route = "/" } = options;
 
