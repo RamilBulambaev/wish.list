@@ -3,6 +3,7 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginI18next from "eslint-plugin-i18next";
+import pluginReactHooks from "eslint-plugin-react-hooks";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -21,6 +22,9 @@ export default [
   pluginI18next.configs["flat/recommended"],
 
   {
+    plugins: {
+      "react-hooks": pluginReactHooks,
+    },
     rules: {
       "react/jsx-indent": [2, 2],
       "react/jsx-indent-props": [2, 2],
@@ -43,6 +47,16 @@ export default [
       "@typescript-eslint/no-unused-vars": "off",
       "react/jsx-no-comment-textnodes": "warn",
       "max-len": ["error", { ignoreComments: true, code: 130 }],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error",
     },
+    overrides: [
+      {
+        files: ["**/src/**/*.{test,stories}.{ts, tsx}"],
+        rules: {
+          "max-len": "off",
+        },
+      },
+    ],
   },
 ];

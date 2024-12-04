@@ -1,15 +1,18 @@
-/* stylelint-disable import-notation */
-/* stylelint-disable scss/load-partial-extension */
 @import "reset";
 @import "variables/global";
 @import "themes/normal";
 @import "themes/dark";
 
-.app {
+body {
   font: var(--font-m);
-  background: var(--bg-color);
   color: var(--primary-color);
+}
+
+.app {
+  background: var(--bg-color);
   min-height: 100vh;
+  font: var(--font-m);
+  color: var(--primary-color);
 }
 
 .content-page {
@@ -19,8 +22,4 @@
 .page-wrapper {
   flex-grow: 1;
   padding: 20px;
-}
-
-.xyi {
-  background-color: red;
 }
