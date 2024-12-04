@@ -50,13 +50,12 @@ export default [
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
     },
-    overrides: [
-      {
-        files: ["**/src/**/*.{test,stories}.{ts, tsx}"],
-        rules: {
-          "max-len": "off",
-        },
-      },
-    ],
+  },
+  {
+    files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
+    rules: {
+      "max-len": "off", // Отключаем max-len для тестов и stories
+      "no-unused-vars": "off", // Отключаем правило no-unused-vars
+    },
   },
 ];

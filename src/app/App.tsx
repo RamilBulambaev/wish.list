@@ -3,14 +3,10 @@ import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { useTheme } from "./providers/ThemeProvider";
 import { Sidebar } from "widgets/Sidebar";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 
 const App = () => {
   const { theme } = useTheme();
-
-  // useEffect(() => {
-  //   document.body.className = theme; // Применяем тему (light или dark)
-  // }, [theme]);
 
   return (
     <div className={classNames("app", {}, [theme])}>
