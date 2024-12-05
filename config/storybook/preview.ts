@@ -20,7 +20,7 @@ const preview: Preview = {
         light: "app_light_theme",
         dark: "app_dark_theme",
       },
-      defaultTheme: "app_light_theme",
+      defaultTheme: "light",
     }),
   ],
 };
