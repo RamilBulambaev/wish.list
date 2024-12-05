@@ -17,10 +17,10 @@ const preview: Preview = {
     RouterDecorator,
     withThemeByClassName({
       themes: {
-        light: "app light",
-        dark: "app dark",
+        light: "app_light_theme",
+        dark: "app_dark_theme",
       },
-      defaultTheme: "light",
+      defaultTheme: "app_light_theme",
     }),
   ],
 };
