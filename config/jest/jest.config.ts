@@ -29,10 +29,7 @@ const config: Config = {
   moduleNameMapper: {
     "\\.s?css$": "identity-obj-proxy",
     "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
-    "^entities/(.*)$": "<rootDir>/src/entities/$1",
-    "^app/(.*)$": "<rootDir>/src/app/$1",
-    "^shared/(.*)$": "<rootDir>/src/shared/$1",
-    "^features/(.*)$": "<rootDir>/src/features/$1",
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
 
   // Indicates whether the coverage information should be collected while executing the test
