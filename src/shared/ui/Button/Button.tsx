@@ -1,4 +1,4 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./Button.module.scss";
 import { ButtonHTMLAttributes } from "react";
 
@@ -22,6 +22,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme;
   square?: boolean;
   size?: ButtonSize;
+  disabled?: boolean;
 }
 
 export const Button = ({
@@ -29,11 +30,13 @@ export const Button = ({
   children,
   theme,
   square,
+  disabled,
   size = ButtonSize.M,
   ...otherProps
 }: ButtonProps) => {
   const mods = {
     [cls.square]: square,
+    [cls.disabled]: disabled,
   };
 
   return (
@@ -44,6 +47,7 @@ export const Button = ({
         cls[theme],
         cls[size],
       ])}
+      disabled={disabled}
       {...otherProps}
     >
       {children}

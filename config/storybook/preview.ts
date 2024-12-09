@@ -1,3 +1,4 @@
+import { StoreDecorator } from "./../../src/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { RouterDecorator } from "./../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { withThemeByClassName } from "@storybook/addon-themes";
@@ -21,6 +22,11 @@ const preview: Preview = {
         dark: "app_dark_theme",
       },
       defaultTheme: "light",
+    }),
+    StoreDecorator({
+      counter: { value: 0 },
+      user: { authData: null },
+      login: { username: "", password: "", isLoading: false, error: null },
     }),
   ],
 };

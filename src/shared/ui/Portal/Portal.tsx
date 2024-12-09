@@ -1,4 +1,4 @@
-import { useTheme } from "app/providers/ThemeProvider";
+import { useTheme } from "@/app/providers/ThemeProvider";
 import { ReactNode } from "react";
 import { createPortal } from "react-dom";
 

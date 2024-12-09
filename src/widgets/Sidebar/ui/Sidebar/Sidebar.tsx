@@ -1,13 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./Sidebar.module.scss";
 import { useState } from "react";
-import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
-import { LangSwither } from "shared/ui/LangSwitcher/LangSwither";
-import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { ThemeSwitcher } from "@/shared/ui/ThemeSwitcher";
+import { LangSwither } from "@/shared/ui/LangSwitcher/LangSwither";
+import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
+import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
 import { useTranslation } from "react-i18next";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import AboutIcon from "shared/assets/icons/about-20-20.svg";
 import MainIcon from "shared/assets/icons/main-20-20.svg";
 

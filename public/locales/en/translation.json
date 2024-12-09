@@ -8,8 +8,11 @@
   "Обновить страницу": "Refresh the page",
   "Нажать": "Click",
   "Войти": "Login",
+  "Выйти": "Logout",
   "Увеличить": "Increment",
   "Уменьшить": "Decrement",
   "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password"
 }
