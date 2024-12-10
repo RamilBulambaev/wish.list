@@ -49,6 +49,7 @@ export default [
       "max-len": ["error", { ignoreComments: true, code: 130 }],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
+      "@typescript-eslint/ban-ts-comment": "warn",
     },
   },
   {
