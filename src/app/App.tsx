@@ -2,7 +2,7 @@ import { classNames } from "../shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Suspense, useEffect } from "react";
 import { useTheme } from "./providers/ThemeProvider";
-import { useAppDispatch } from "@/shared/lib/store/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { userActions } from "@/entities/User";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
