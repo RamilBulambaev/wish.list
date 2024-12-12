@@ -15,7 +15,6 @@ const preview: Preview = {
   },
   decorators: [
     StyleDecorator,
-    RouterDecorator,
     withThemeByClassName({
       themes: {
         light: "app_light_theme",
@@ -28,6 +27,7 @@ const preview: Preview = {
       user: { authData: null },
       login: { username: "", password: "", isLoading: false, error: null },
     }),
+    RouterDecorator,
   ],
 };
 

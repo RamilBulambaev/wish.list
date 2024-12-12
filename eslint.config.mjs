@@ -13,6 +13,7 @@ export default [
       globals: {
         ...globals.browser,
         __IS_DEV__: "readonly",
+        __API__: "readonly",
       },
     },
   },

@@ -9,7 +9,6 @@ import { Sidebar } from "@/widgets/Sidebar";
 
 const App = () => {
   const { theme } = useTheme();
-
   const dispatch = useAppDispatch();
 
   useEffect(() => {

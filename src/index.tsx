@@ -7,14 +7,20 @@ import "./shared/config/i18n/i18n";
 import { ErrorBoundary } from "./app/providers/ErrorBoundary";
 import { StoreProvider } from "@/app/providers/StoreProvider";
 
-createRoot(document.getElementById("root")).render(
-  <StoreProvider>
-    <BrowserRouter>
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  throw new Error("Root element with ID 'root' not found.");
+}
+
+createRoot(rootElement).render(
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBoundary>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>
+    </StoreProvider>
+  </BrowserRouter>
 );

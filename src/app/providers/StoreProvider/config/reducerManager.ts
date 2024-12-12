@@ -13,7 +13,7 @@ export function createReducerManager(
 
   let combinedReducer = combineReducers(reducers);
 
-  let keysToRemove: StateSchemaKey[] = [];
+  let keysToRemove: Array<StateSchemaKey> = [];
 
   return {
     getReducerMap: () => reducers,
@@ -21,12 +21,12 @@ export function createReducerManager(
     reduce: (state: StateSchema, action: UnknownAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state };
-        for (const key of keysToRemove) {
+        keysToRemove.forEach((key) => {
           delete state[key];
-        }
+        });
         keysToRemove = [];
       }
-
+      //@ts-ignore
       return combinedReducer(state, action);
     },
 
@@ -53,16 +53,3 @@ export function createReducerManager(
     },
   };
 }
-
-// const staticReducers = {
-//   users: usersReducer,
-//   posts: postsReducer,
-// };
-
-// export function configureStore(initialState) {
-//   const reducerManager = createReducerManager(staticReducers);
-
-//   const store = createStore(reducerManager.reduce, initialState);
-
-//   store.reducerManager = reducerManager;
-// }
