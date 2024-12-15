@@ -1,0 +1,12 @@
+.ProfilePageHeader {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.buttonWrapper {
+  margin-left: auto;
+}
+
+.editBtn:not(:last-child) {
+  margin-right: 10px;
+}
