@@ -1,9 +1,11 @@
 import {
+  EValidateProfileError,
   fetchProfileData,
   getProfileError,
   getProfileForm,
   getProfileIsLoading,
   getProfileReadOnly,
+  getProfileValidateErrors,
   profileActions,
   ProfileCard,
   profileReducer,
@@ -20,6 +22,7 @@ import { useSelector } from "react-redux";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { ECurrency } from "@/entities/Currency";
 import { ECountry } from "@/entities/Country";
+import { Text, TextTheme } from "@/shared/ui/Text/Text";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -30,15 +33,26 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadOnly);
+  const validateErrors = useSelector(getProfileValidateErrors);
+
+  const validateErrorTranslates = {
+    [EValidateProfileError.SERVER_ERROR]: t("Серверная ошибка при сохранении"),
+    [EValidateProfileError.INCORRECT_AGE]: t("Некорректный возраст"),
+    [EValidateProfileError.INCORRECT_COUNTRY]: t("Некорректный регион"),
+    [EValidateProfileError.INCORRECT_USER_DATA]: t("Имя и фамилия обязательны"),
+    [EValidateProfileError.NO_DATA]: t("Данные не указаны"),
+  };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== "storybook") {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeFirstname = useCallback(
@@ -56,8 +70,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   );
 
   const onChangeAge = useCallback(
-    (value?: string) => {
-      const isNumeric = /^[0-9]+$/.test(value || "");
+    (value: string) => {
+      if (value === "") {
+        dispatch(profileActions.updateProfile({ age: 0 }));
+        return;
+      }
+
+      const isNumeric = /^[0-9]+$/.test(value);
       if (isNumeric) {
         dispatch(profileActions.updateProfile({ age: Number(value) }));
       }
@@ -104,6 +123,14 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames("", {}, [className])}>
         <ProfilePageHeader />
+        {validateErrors?.length &&
+          validateErrors.map((err) => (
+            <Text
+              text={validateErrorTranslates[err]}
+              key={err}
+              theme={TextTheme.ERROR}
+            />
+          ))}
         <ProfileCard
           onChangeFirstname={onChangeFirstname}
           onChangeLastname={onChangeLastname}
