@@ -2,7 +2,6 @@ import { Meta, StoryObj } from "@storybook/react/*";
 import { ProfileCard } from "./ProfileCard";
 import { ECountry } from "@/entities/Country";
 import { ECurrency } from "@/entities/Currency";
-import ProfileAvatar from "@/shared/assets/tests/avatar.jpeg";
 
 const meta: Meta<typeof ProfileCard> = {
   title: "entities/ProfileCard",
@@ -26,7 +25,6 @@ export const Primary: Story = {
       city: "Omsk",
       country: ECountry.Russia,
       currency: ECurrency.RUB,
-      avatar: ProfileAvatar,
     },
   },
 };
