@@ -3,7 +3,7 @@ import { EValidateProfileError, IProfileSchema } from "../types/profile";
 import { profileActions, profileReducer } from "./profileSlice";
 import { ECurrency } from "@/entities/Currency";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
-import { AnyAction, UnknownAction } from "@reduxjs/toolkit";
+import { UnknownAction } from "@reduxjs/toolkit";
 
 const data = {
   username: "Ramil",

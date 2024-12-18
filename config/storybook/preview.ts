@@ -19,6 +19,7 @@ const preview: Preview = {
       themes: {
         light: "app_light_theme",
         dark: "app_dark_theme",
+        blue: "app_blue_theme",
       },
       defaultTheme: "light",
     }),

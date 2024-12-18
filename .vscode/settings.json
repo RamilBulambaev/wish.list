@@ -1,0 +1,9 @@
+{
+  "i18n-ally.localesPaths": "public/locales", // Основная директория с переводами
+  "i18n-ally.enabledFrameworks": ["react-i18next"], // Поддержка react-i18next
+  "i18n-ally.namespace": true, // Включаем поддержку неймспейсов
+  "i18n-ally.pathMatcher": "{locale}/{namespace}.json", // Пути с неймспейсами
+  "i18n-ally.keystyle": "flat", // Вложенный стиль ключей
+  "i18n-ally.sortKeys": true, // Сортировка ключей по алфавиту
+  "i18n-ally.sourceLanguage": "ru" // Язык ключей - русский
+}

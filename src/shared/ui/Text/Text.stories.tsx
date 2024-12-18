@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Text, TextTheme } from "./Text";
+import { Text, TextSize, TextTheme } from "./Text";
 
 const meta: Meta<typeof Text> = {
   title: "shared/Text",
@@ -51,5 +51,39 @@ export const onlyTextError: Story = {
   args: {
     text: "Текст",
     theme: TextTheme.ERROR,
+  },
+};
+
+export const SizeM: Story = {
+  args: {
+    text: "Текст",
+    title: "Заголовок",
+    size: TextSize.M,
+  },
+};
+
+export const SizeL: Story = {
+  args: {
+    text: "Текст",
+    title: "Заголовок",
+    size: TextSize.L,
+  },
+};
+
+export const ErrorSizeM: Story = {
+  args: {
+    text: "Текст",
+    title: "Заголовок",
+    theme: TextTheme.ERROR,
+    size: TextSize.M,
+  },
+};
+
+export const ErrorSizeL: Story = {
+  args: {
+    text: "Текст",
+    title: "Заголовок",
+    theme: TextTheme.ERROR,
+    size: TextSize.L,
   },
 };

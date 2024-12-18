@@ -1,3 +1,4 @@
+import { IArticleDetailsSchema } from "@/entities/Article";
 import { CounterSchema } from "@/entities/Counter";
 import { IProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
@@ -18,6 +19,7 @@ export interface StateSchema {
   //Асинхронные редюсеры
   login?: LoginSchema;
   profile?: IProfileSchema;
+  ArticleDetails?: IArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
