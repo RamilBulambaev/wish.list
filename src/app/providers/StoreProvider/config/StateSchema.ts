@@ -3,6 +3,7 @@ import { CounterSchema } from "@/entities/Counter";
 import { IProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/AuthByUsername";
+import { IArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage";
 import {
   EnhancedStore,
   Reducer,
@@ -20,6 +21,7 @@ export interface StateSchema {
   login?: LoginSchema;
   profile?: IProfileSchema;
   ArticleDetails?: IArticleDetailsSchema;
+  articleDetailsComments?: IArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

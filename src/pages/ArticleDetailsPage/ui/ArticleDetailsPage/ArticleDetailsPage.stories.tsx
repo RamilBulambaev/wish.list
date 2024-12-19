@@ -11,7 +11,7 @@ const article: IArticle = {
   id: "1",
   title: "Javascript news",
   subtitle: "Что нового в JS за 2022 год?",
-  img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+  img: "",
   views: 1022,
   createdAt: "26.02.2022",
   type: [EArticleType.IT],
@@ -92,8 +92,23 @@ type Story = StoryObj<typeof ArticleDetailsPage>;
 export const Common: Story = {
   args: {},
   decorators: StoreDecorator({
-    ArticleDetails: {
-      data: article,
+    ArticleDetails: { data: article },
+    articleDetailsComments: {
+      ids: ["1", "2"],
+      entities: {
+        "1": {
+          id: "1",
+          text: "Комментарий 1",
+          user: { id: "1", username: "User1" },
+        },
+        "2": {
+          id: "2",
+          text: "Комментарий 2",
+          user: { id: "2", username: "User2" },
+        },
+      },
+      isLoading: false,
+      error: undefined,
     },
   }),
 };

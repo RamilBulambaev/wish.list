@@ -9,6 +9,7 @@ const defaultAsyncReducers: ReducersList = {
   login: loginReducer,
   profile: profileReducer,
   ArticleDetails: articleDetailsReducer,
+  articleDetailsComments: articleDetailsReducer,
 };
 
 export const StoreDecorator = (
