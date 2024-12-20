@@ -12,6 +12,10 @@ const data: IArticle = {
   views: 1022,
   createdAt: "26.02.2022",
   type: [EArticleType.IT],
+  user: {
+    id: "1",
+    username: "Makvoi",
+  },
   blocks: [
     {
       id: "1",
