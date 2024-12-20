@@ -39,3 +39,9 @@ export const Common: Story = {
 export const Empry: Story = {
   args: {},
 };
+
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+  },
+};
