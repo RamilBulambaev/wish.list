@@ -55,11 +55,25 @@ describe("articlesPageSlice.test", () => {
     });
   });
 
-  test("initState action", () => {
-    localStorage.setItem("ARTICLES_VIEW_LOCALSTORAGE_KEY", EArticleView.BIG);
+  test("test set page", () => {
+    const state: DeepPartial<IArticlesPageSchema> = {
+      page: 1,
+    };
+    expect(
+      articlesPageReducer(
+        state as IArticlesPageSchema,
+        articlesPageActions.setPage(2)
+      )
+    ).toEqual({
+      page: 2,
+    });
+  });
+
+  test("initState action view big", () => {
+    localStorage.setItem("articles_view", EArticleView.BIG);
 
     const state: DeepPartial<IArticlesPageSchema> = {
-      view: EArticleView.SMALL,
+      view: EArticleView.BIG,
     };
 
     const result = articlesPageReducer(
@@ -68,6 +82,23 @@ describe("articlesPageSlice.test", () => {
     );
 
     expect(result.view).toBe(EArticleView.BIG);
+    expect(result.limit).toBe(4);
+  });
+
+  test("initState action view small", () => {
+    localStorage.setItem("articles_view", EArticleView.SMALL);
+
+    const state: DeepPartial<IArticlesPageSchema> = {
+      view: EArticleView.BIG,
+    };
+
+    const result = articlesPageReducer(
+      state as IArticlesPageSchema,
+      articlesPageActions.initState()
+    );
+
+    expect(result.view).toBe(EArticleView.SMALL);
+    expect(result.limit).toBe(9);
   });
 
   test("test articlesPageSlice service pending", () => {
@@ -75,7 +106,9 @@ describe("articlesPageSlice.test", () => {
       isLoading: false,
     };
 
-    const action: UnknownAction = fetchArticlesList.pending("requestId");
+    const action: UnknownAction = fetchArticlesList.pending("requestId", {
+      page: 1,
+    });
 
     expect(articlesPageReducer(state as IArticlesPageSchema, action)).toEqual({
       error: undefined,
@@ -86,9 +119,15 @@ describe("articlesPageSlice.test", () => {
   test("test articlesPageSlice service fullfield", () => {
     const state: DeepPartial<IArticlesPageSchema> = {
       isLoading: true,
+      entities: {},
+      ids: [],
     };
 
-    const action: UnknownAction = fetchArticlesList.fulfilled(data, "fulfield");
+    const action: UnknownAction = fetchArticlesList.fulfilled(
+      data,
+      "fulfield",
+      { page: 1 }
+    );
 
     expect(articlesPageReducer(state as IArticlesPageSchema, action)).toEqual({
       isLoading: false,
@@ -96,6 +135,7 @@ describe("articlesPageSlice.test", () => {
         "1": data[0],
       },
       ids: ["1"],
+      hasMore: true,
     });
   });
 
@@ -110,6 +150,7 @@ describe("articlesPageSlice.test", () => {
     const action: UnknownAction = fetchArticlesList.rejected(
       new Error(error),
       "rejected",
+      { page: 1 },
       undefined
     );
 

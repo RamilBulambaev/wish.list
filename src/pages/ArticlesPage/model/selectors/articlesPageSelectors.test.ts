@@ -1,7 +1,10 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import {
   getArticlesPageError,
+  getArticlesPageHasMore,
   getArticlesPageIsLoading,
+  getArticlesPageLimit,
+  getArticlesPageNum,
   getArticlesPageView,
 } from "./articlesPageSelectors";
 import { EArticleView } from "@/entities/Article";
@@ -44,5 +47,44 @@ describe("articlesPageSelectors.test", () => {
   test("should work with empty state", () => {
     const state: DeepPartial<StateSchema> = {};
     expect(getArticlesPageView(state as StateSchema)).toBe(EArticleView.SMALL);
+  });
+
+  test("should return page num", () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        page: 5,
+      },
+    };
+    expect(getArticlesPageNum(state as StateSchema)).toBe(5);
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getArticlesPageNum(state as StateSchema)).toBe(1);
+  });
+
+  test("should return page limit", () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        limit: 6,
+      },
+    };
+    expect(getArticlesPageLimit(state as StateSchema)).toBe(6);
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getArticlesPageLimit(state as StateSchema)).toBe(9);
+  });
+
+  test("should return has more", () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        hasMore: true,
+      },
+    };
+    expect(getArticlesPageHasMore(state as StateSchema)).toBe(true);
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getArticlesPageHasMore(state as StateSchema)).toBe(undefined);
   });
 });

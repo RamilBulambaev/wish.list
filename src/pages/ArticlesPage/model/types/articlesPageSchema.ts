@@ -7,4 +7,8 @@ export interface IArticlesPageSchema extends EntityState<IArticle, string> {
   error?: string;
 
   view: EArticleView;
+  // pagination
+  page: number;
+  limit?: number;
+  hasMore: boolean;
 }

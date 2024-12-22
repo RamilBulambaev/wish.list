@@ -1,7 +1,10 @@
 import axios from "axios";
 import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 import { fetchArticlesList } from "./fetchArticlesList";
-import { EArticleBlockType, EArticleType } from "@/entities/Article/model/types/article";
+import {
+  EArticleBlockType,
+  EArticleType,
+} from "@/entities/Article/model/types/article";
 
 jest.mock("axios");
 
@@ -85,9 +88,13 @@ const data = [
 
 describe("fetchCommentsByArticleId.test", () => {
   test("success", async () => {
-    const thunk = new TestAsyncThunk(fetchArticlesList);
+    const thunk = new TestAsyncThunk(fetchArticlesList, {
+      articlesPage: {
+        limit: 9,
+      },
+    });
     thunk.api.get.mockReturnValue(Promise.resolve({ data: data }));
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk({ page: 1 });
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe("fulfilled");
@@ -97,7 +104,7 @@ describe("fetchCommentsByArticleId.test", () => {
   test("error loading", async () => {
     const thunk = new TestAsyncThunk(fetchArticlesList);
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk({ page: 1 });
 
     expect(result.meta.requestStatus).toBe("rejected");
   });
