@@ -1,15 +1,10 @@
-import { loginReducer } from "@/features/AuthByUsername/model/slice/loginSlice";
-import {
-  configureStore,
-  ReducersMapObject,
-  ThunkMiddleware,
-} from "@reduxjs/toolkit";
+import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
 import { StateSchema } from "./StateSchema";
 import { counterReducer } from "@/entities/Counter";
 import { userReducer } from "@/entities/User";
 import { createReducerManager } from "./reducerManager";
 import { $api } from "@/shared/api/api";
-import { NavigateFunction } from "react-router-dom";
+import { uiReducer } from "@/features/UI";
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -19,6 +14,7 @@ export function createReduxStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    ui: uiReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);

@@ -4,6 +4,7 @@ import { IProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
 import { IAddCommentFormSchema } from "@/features/addCommentForm";
 import { LoginSchema } from "@/features/AuthByUsername";
+import { UISchema } from "@/features/UI";
 import { IArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage";
 import { IArticlesPageSchema } from "@/pages/ArticlesPage";
 import {
@@ -17,6 +18,7 @@ import { AxiosInstance } from "axios";
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  ui: UISchema;
 
   //Асинхронные редюсеры
   login?: LoginSchema;
@@ -38,7 +40,6 @@ export interface ReducerManager {
   remove: (key: StateSchemaKey) => void;
   getMountedReducers: () => MountedReducers;
 }
-
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager;
