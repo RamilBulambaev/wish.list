@@ -1,4 +1,4 @@
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
+import { loginReducer } from "@/features/AuthByUsername/model/slice/loginSlice";
 import {
   configureStore,
   ReducersMapObject,
@@ -13,8 +13,7 @@ import { NavigateFunction } from "react-router-dom";
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: NavigateFunction
+  asyncReducers?: ReducersMapObject<StateSchema>
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -34,7 +33,6 @@ export function createReduxStore(
         thunk: {
           extraArgument: {
             api: $api,
-            navigate,
           },
         },
       }),

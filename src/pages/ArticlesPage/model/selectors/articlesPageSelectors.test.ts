@@ -2,6 +2,7 @@ import { StateSchema } from "@/app/providers/StoreProvider";
 import {
   getArticlesPageError,
   getArticlesPageHasMore,
+  getArticlesPageInited,
   getArticlesPageIsLoading,
   getArticlesPageLimit,
   getArticlesPageNum,
@@ -86,5 +87,18 @@ describe("articlesPageSelectors.test", () => {
   test("should work with empty state", () => {
     const state: DeepPartial<StateSchema> = {};
     expect(getArticlesPageHasMore(state as StateSchema)).toBe(undefined);
+  });
+
+  test("should return _inited", () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        _inited: false,
+      },
+    };
+    expect(getArticlesPageInited(state as StateSchema)).toBe(false);
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getArticlesPageInited(state as StateSchema)).toBe(undefined);
   });
 });
