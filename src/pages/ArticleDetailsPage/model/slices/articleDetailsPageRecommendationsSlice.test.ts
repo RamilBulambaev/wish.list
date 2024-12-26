@@ -1,11 +1,12 @@
-import { Meta, StoryObj } from "@storybook/react";
-import ArticleDetailsPage from "./ArticleDetailsPage";
 import {
   EArticleBlockType,
   EArticleType,
   IArticle,
 } from "@/entities/Article/model/types/article";
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { UnknownAction } from "@reduxjs/toolkit";
+import { articleDetailsRecomendationsSchema } from "../types/articleDetailsRecomendationsSchema";
+import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";
+import { articleDetailsPageRecommendationsReducer } from "./articleDetailsPageRecommendationsSlice";
 
 const data = [
   {
@@ -122,50 +123,79 @@ const data = [
   },
 ] as IArticle[];
 
-const meta: Meta<typeof ArticleDetailsPage> = {
-  title: "pages/ArticleDetailsPage",
-  component: ArticleDetailsPage,
-  parameters: {
-    layout: "centered",
-  },
-  tags: ["autodocs"],
-} satisfies Meta<typeof ArticleDetailsPage>;
+describe("articleDetailsPageRecommendationsSlice.test", () => {
+  test("test articleDetailsPageRecommendationsSlice service pending", () => {
+    const state: DeepPartial<articleDetailsRecomendationsSchema> = {
+      isLoading: false,
+      error: "Some error",
+    };
 
-export default meta;
-type Story = StoryObj<typeof ArticleDetailsPage>;
+    const action: UnknownAction =
+      fetchArticleRecommendations.pending("requestId");
 
-export const Common: Story = {
-  args: {},
-  decorators: StoreDecorator({
-    ArticleDetails: { data: data[0] },
-    articleDetailsPage: {
-      comments: {
-        ids: ["1", "2"],
-        entities: {
-          "1": {
-            id: "1",
-            text: "Комментарий 1",
-            user: { id: "1", username: "User1" },
-          },
-          "2": {
-            id: "2",
-            text: "Комментарий 2",
-            user: { id: "2", username: "User2" },
-          },
-        },
-        isLoading: false,
-        error: undefined,
+    expect(
+      articleDetailsPageRecommendationsReducer(
+        state as articleDetailsRecomendationsSchema,
+        action
+      )
+    ).toEqual({
+      error: undefined,
+      isLoading: true,
+    });
+  });
+
+  test("test articleDetailsPageRecommendationsSlice service fullfield with replace", () => {
+    const state: DeepPartial<articleDetailsRecomendationsSchema> = {
+      isLoading: true,
+      entities: { "1": data[0], "2": data[1], "3": data[2], "4": data[3] },
+      ids: ["1", "2", "3", "4"],
+    };
+
+    const action: UnknownAction = fetchArticleRecommendations.fulfilled(
+      data,
+      "fulfield"
+    );
+
+    expect(
+      articleDetailsPageRecommendationsReducer(
+        state as articleDetailsRecomendationsSchema,
+        action
+      )
+    ).toEqual({
+      isLoading: false,
+      entities: {
+        "1": data[0],
+        "2": data[1],
+        "3": data[2],
+        "4": data[3],
       },
-      recommendations: {
-        isLoading: false,
-        entities: {
-          "1": data[0],
-          "2": data[1],
-          "3": data[2],
-          "4": data[3],
-        },
-        ids: ["1", "2", "3", "4"],
-      },
-    },
-  }),
-};
+      ids: ["1", "2", "3", "4"],
+    });
+  });
+
+  test("test articleDetailsPageRecommendationsSlice service rejected", () => {
+    const state: DeepPartial<articleDetailsRecomendationsSchema> = {
+      isLoading: true,
+      error: undefined,
+    };
+
+    const error = "Network Error";
+
+    const action: UnknownAction = fetchArticleRecommendations.rejected(
+      new Error(error),
+      "rejected",
+      undefined,
+      undefined
+    );
+
+    expect(
+      articleDetailsPageRecommendationsReducer(
+        state as articleDetailsRecomendationsSchema,
+        action
+      )
+    ).toEqual({
+      isLoading: false,
+      error: error,
+    });
+  });
+});

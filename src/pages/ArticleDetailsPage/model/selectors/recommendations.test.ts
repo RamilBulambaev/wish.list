@@ -1,37 +1,43 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import {
-  getArticleCommentsError,
-  getArticleCommentsIsLoading,
-} from "./comments";
+  getArticleRecommendationsError,
+  getArticleRecommendationsIsLoading,
+} from "./recommendations";
 
-describe("comments.test", () => {
+describe("recommendations.test", () => {
   test("should return isLoading", () => {
     const state: DeepPartial<StateSchema> = {
       articleDetailsPage: {
-        comments: {
+        recommendations: {
           isLoading: true,
         },
       },
     };
-    expect(getArticleCommentsIsLoading(state as StateSchema)).toBe(true);
+    expect(getArticleRecommendationsIsLoading(state as StateSchema)).toBe(true);
   });
   test("should work with empty state", () => {
     const state: DeepPartial<StateSchema> = {};
-    expect(getArticleCommentsIsLoading(state as StateSchema)).toBe(undefined);
+    expect(getArticleRecommendationsIsLoading(state as StateSchema)).toBe(
+      undefined
+    );
   });
 
   test("should return error", () => {
     const state: DeepPartial<StateSchema> = {
       articleDetailsPage: {
-        comments: {
+        recommendations: {
           error: "error",
         },
       },
     };
-    expect(getArticleCommentsError(state as StateSchema)).toEqual("error");
+    expect(getArticleRecommendationsError(state as StateSchema)).toEqual(
+      "error"
+    );
   });
   test("should work with empty state", () => {
     const state: DeepPartial<StateSchema> = {};
-    expect(getArticleCommentsError(state as StateSchema)).toBe(undefined);
+    expect(getArticleRecommendationsError(state as StateSchema)).toBe(
+      undefined
+    );
   });
 });

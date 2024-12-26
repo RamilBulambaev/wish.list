@@ -5,7 +5,7 @@ import { UserSchema } from "@/entities/User";
 import { IAddCommentFormSchema } from "@/features/addCommentForm";
 import { LoginSchema } from "@/features/AuthByUsername";
 import { UISchema } from "@/features/UI";
-import { IArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage";
+import { ArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage";
 import { IArticlesPageSchema } from "@/pages/ArticlesPage";
 import {
   EnhancedStore,
@@ -24,9 +24,9 @@ export interface StateSchema {
   login?: LoginSchema;
   profile?: IProfileSchema;
   ArticleDetails?: IArticleDetailsSchema;
-  articleDetailsComments?: IArticleDetailsCommentsSchema;
   addCommentForm?: IAddCommentFormSchema;
   articlesPage?: IArticlesPageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

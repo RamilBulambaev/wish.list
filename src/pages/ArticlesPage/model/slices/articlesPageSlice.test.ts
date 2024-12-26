@@ -1,4 +1,3 @@
-import { SortOrder } from "./../../../../shared/types/index";
 import {
   ArticleSortField,
   EArticleBlockType,
