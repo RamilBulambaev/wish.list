@@ -124,3 +124,19 @@ export const LoadingSmall: Story = {
     view: EArticleView.SMALL,
   },
 };
+
+export const NotArticlesBig: Story = {
+  args: {
+    isLoading: false,
+    articles: [],
+    view: EArticleView.BIG,
+  },
+};
+
+export const NotArticlesSmall: Story = {
+  args: {
+    isLoading: false,
+    articles: [],
+    view: EArticleView.SMALL,
+  },
+};

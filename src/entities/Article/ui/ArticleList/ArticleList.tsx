@@ -5,6 +5,7 @@ import { memo, useCallback } from "react";
 import { EArticleView, IArticle } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItem.skeleton";
+import { Text, TextSize, TextTheme } from "@/shared/ui/Text/Text";
 
 interface ArticleListProps {
   className?: string;
@@ -23,7 +24,7 @@ const getSkeletons = (view: EArticleView) => {
 
 export const ArticleList = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, view = EArticleView.SMALL } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation("articles");
 
   const renderArticle = (article: IArticle) => {
     return (
@@ -35,6 +36,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
       />
     );
   };
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        <Text size={TextSize.L} title={t("Статьи не найденны")} />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>

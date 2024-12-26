@@ -6,9 +6,17 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageLimit,
   getArticlesPageNum,
+  getArticlesPageOrder,
+  getArticlesPageSearch,
+  getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView,
 } from "./articlesPageSelectors";
-import { EArticleView } from "@/entities/Article";
+import {
+  ArticleSortField,
+  EArticleType,
+  EArticleView,
+} from "@/entities/Article";
 
 describe("articlesPageSelectors.test", () => {
   test("should return isLoading", () => {
@@ -100,5 +108,63 @@ describe("articlesPageSelectors.test", () => {
   test("should work with empty state", () => {
     const state: DeepPartial<StateSchema> = {};
     expect(getArticlesPageInited(state as StateSchema)).toBe(undefined);
+  });
+
+  test("should return order", () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        order: "desc",
+      },
+    };
+    expect(getArticlesPageOrder(state as StateSchema)).toBe("desc");
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getArticlesPageOrder(state as StateSchema)).toBe("asc");
+  });
+
+  test("should return sort", () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        sort: ArticleSortField.TITLE,
+      },
+    };
+    expect(getArticlesPageSort(state as StateSchema)).toBe(
+      ArticleSortField.TITLE
+    );
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getArticlesPageSort(state as StateSchema)).toBe(
+      ArticleSortField.CREATED
+    );
+  });
+
+  test("should return search", () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        search: "Hello",
+      },
+    };
+    expect(getArticlesPageSearch(state as StateSchema)).toBe("Hello");
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getArticlesPageSearch(state as StateSchema)).toBe("");
+  });
+
+  test("should return type", () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        type: EArticleType.ECONOMICS,
+      },
+    };
+    expect(getArticlesPageType(state as StateSchema)).toBe(
+      EArticleType.ECONOMICS
+    );
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+    expect(getArticlesPageType(state as StateSchema)).toBe(EArticleType.ALL);
   });
 });
