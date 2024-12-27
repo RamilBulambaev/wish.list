@@ -4,6 +4,7 @@ import { memo } from "react";
 
 export enum TextTheme {
   PRIMARY = "pimary",
+  INVERTED = "inverted",
   ERROR = "error",
 }
 
