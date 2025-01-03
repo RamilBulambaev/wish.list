@@ -54,6 +54,14 @@ export const onlyTextError: Story = {
   },
 };
 
+export const SizeS: Story = {
+  args: {
+    text: "Текст",
+    title: "Заголовок",
+    size: TextSize.S,
+  },
+};
+
 export const SizeM: Story = {
   args: {
     text: "Текст",

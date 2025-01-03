@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./Sidebar.module.scss";
 import { memo, useMemo, useState } from "react";
@@ -31,7 +30,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   );
 
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
@@ -47,14 +46,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       >
         {collapsed ? ">" : "<"}
       </Button>
-      <VStack gap={"8"} className={cls.items}>
+      <VStack role="navigation" gap={"8"} className={cls.items}>
         {itemList}
       </VStack>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwither short={collapsed} className={cls.lang} />
       </div>
-    </menu>
+    </aside>
   );
 });
 
