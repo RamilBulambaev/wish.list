@@ -63,6 +63,7 @@
     "css-loader": "^6.6.0",
     "eslint": "^9.16.0",
     "eslint-plugin-i18next": "^6.1.1",
+    "eslint-plugin-plugin-path-checker-fsd-r": "^0.0.2",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-storybook": "^0.11.1",

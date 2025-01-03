@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginI18next from "eslint-plugin-i18next";
 import pluginReactHooks from "eslint-plugin-react-hooks";
+import pathCheckerPlugin from "eslint-plugin-plugin-path-checker-fsd-r";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -26,6 +27,7 @@ export default [
   {
     plugins: {
       "react-hooks": pluginReactHooks,
+      "plugin-path-checker-fsd-r": pathCheckerPlugin,
     },
     rules: {
       "react/jsx-indent": [2, 2],
@@ -53,6 +55,7 @@ export default [
       "react-hooks/exhaustive-deps": "error",
       "@typescript-eslint/ban-ts-comment": "warn",
       "@typescript-eslint/no-explicit-any": "warn",
+      "plugin-path-checker-fsd-r/path-checker": "error",
     },
   },
   {
