@@ -3,15 +3,12 @@ import cls from "./ArticlesPage.module.scss";
 import { memo, useCallback } from "react";
 import {
   ArticleList,
-  ArticleViewSelector,
-  EArticleView,
 } from "@/entities/Article";
 import {
   DynamicModuleLoader,
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
-  articlesPageActions,
   articlesPageReducer,
   getArticles,
 } from "../../model/slices/articlesPageSlice";
