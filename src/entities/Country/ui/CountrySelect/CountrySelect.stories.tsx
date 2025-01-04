@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { CountrySelect } from "./CountrySelect";
+import { ECountry } from "../../model/types/country";
 
 const meta: Meta<typeof CountrySelect> = {
   title: "entities/CountrySelect",
@@ -13,6 +14,19 @@ const meta: Meta<typeof CountrySelect> = {
 export default meta;
 type Story = StoryObj<typeof CountrySelect>;
 
-export const Primary: Story = {
+export const Common: Story = {
   args: {},
+};
+
+export const Value: Story = {
+  args: {
+    value: ECountry.Kazakhstan,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    readonly: true,
+    value: ECountry.Armenia,
+  },
 };
