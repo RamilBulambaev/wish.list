@@ -1,11 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ListBox } from "./ListBox";
-import { ECurrency } from "@/entities/Currency";
 
 const options = [
-  { value: ECurrency.RUB, content: ECurrency.RUB },
-  { value: ECurrency.USD, content: ECurrency.USD },
-  { value: ECurrency.EUR, content: ECurrency.EUR },
+  { value: "Привет", content: "Привет" },
+  { value: "Пока", content: "Пока" },
 ];
 
 const meta: Meta<typeof ListBox> = {
@@ -14,6 +12,13 @@ const meta: Meta<typeof ListBox> = {
   parameters: {
     layout: "centered",
   },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: 100 }}>
+        <Story />
+      </div>
+    ),
+  ],
   tags: ["autodocs"],
 } satisfies Meta<typeof ListBox>;
 
@@ -23,16 +28,16 @@ type Story = StoryObj<typeof ListBox>;
 export const Common: Story = {
   args: {
     items: options,
-    value: ECurrency.RUB,
-    label: "Укажите валюту",
+    value: "Привет",
+    label: "Привет или пока?",
   },
 };
 
 export const Disabled: Story = {
   args: {
     items: options,
-    value: ECurrency.RUB,
-    label: "Укажите валюту",
+    value: "Пока",
+    label: "Привет или пока?",
     readonly: true,
   },
 };
