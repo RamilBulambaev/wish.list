@@ -1,12 +1,13 @@
 import { IArticleDetailsSchema } from "@/entities/Article";
 import { CounterSchema } from "@/entities/Counter";
-import { IProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
 import { IAddCommentFormSchema } from "@/features/addCommentForm";
 import { LoginSchema } from "@/features/AuthByUsername";
+import { IProfileSchema } from "@/features/editableProfileCard";
 import { UISchema } from "@/features/UI";
 import { ArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage";
 import { IArticlesPageSchema } from "@/pages/ArticlesPage";
+import { rtkApi } from "@/shared/api/rtkApi";
 import {
   EnhancedStore,
   Reducer,
@@ -19,6 +20,7 @@ export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   ui: UISchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   //Асинхронные редюсеры
   login?: LoginSchema;

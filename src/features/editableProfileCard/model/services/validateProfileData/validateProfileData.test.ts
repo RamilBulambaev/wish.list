@@ -2,7 +2,7 @@ import axios from "axios";
 import { ECountry } from "@/entities/Country";
 import { ECurrency } from "@/entities/Currency";
 import { validateProfileData } from "./validateProfileData";
-import { EValidateProfileError } from "../../types/profile";
+import { EValidateProfileError } from "../../types/editableProfileCardSchema";
 
 jest.mock("axios");
 
