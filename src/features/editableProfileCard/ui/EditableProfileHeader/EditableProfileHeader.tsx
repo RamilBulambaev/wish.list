@@ -44,16 +44,28 @@ export const EditableProfileHeader = memo(
           <>
             {readonly ? (
               <div>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+                <Button
+                  theme={ButtonTheme.OUTLINE}
+                  onClick={onEdit}
+                  data-testid={"EditableProfileHeader.EditButton"}
+                >
                   {t("Редактировать")}
                 </Button>
               </div>
             ) : (
               <HStack gap={"8"}>
-                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
+                <Button
+                  theme={ButtonTheme.OUTLINE_RED}
+                  onClick={onCancelEdit}
+                  data-testid={"EditableProfileHeader.CalncelButton"}
+                >
                   {t("Отменить")}
                 </Button>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
+                <Button
+                  theme={ButtonTheme.OUTLINE}
+                  onClick={onSave}
+                  data-testid={"EditableProfileHeader.SaveButton"}
+                >
                   {t("Сохранить")}
                 </Button>
               </HStack>
