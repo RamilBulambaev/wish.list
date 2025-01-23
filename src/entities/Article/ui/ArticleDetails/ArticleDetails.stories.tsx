@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ArticleDetails } from "./ArticleDetails";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { IArticle } from "../../model/types/article";
 import {
   EArticleBlockType,
   EArticleType,
-  IArticle,
-} from "../../model/types/article";
+} from "../../model/consts/articleConsts";
 
 const article: IArticle = {
   id: "1",

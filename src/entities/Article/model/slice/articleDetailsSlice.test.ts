@@ -1,5 +1,6 @@
 import { UnknownAction } from "@reduxjs/toolkit";
-import { EArticleBlockType, EArticleType, IArticle } from "../types/article";
+import { IArticle } from "../types/article";
+import { EArticleBlockType, EArticleType } from "../consts/articleConsts";
 import { IArticleDetailsSchema } from "../types/articleDetailsSchema";
 import { articleDetailsReducer } from "./articleDetailsSlice";
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";

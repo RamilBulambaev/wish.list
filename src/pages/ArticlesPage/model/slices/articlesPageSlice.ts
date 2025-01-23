@@ -11,7 +11,7 @@ import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
 import {
   ArticleSortField,
   EArticleType,
-} from "@/entities/Article/model/types/article";
+} from "@/entities/Article/model/consts/articleConsts";
 import { SortOrder } from "@/shared/types";
 
 const articlesAdapter = createEntityAdapter({

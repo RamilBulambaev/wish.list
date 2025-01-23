@@ -1,14 +1,9 @@
-import {
-  ArticleSortField,
-  EArticleBlockType,
-  EArticleType,
-  EArticleView,
-  IArticle,
-} from "@/entities/Article/model/types/article";
+import { IArticle } from "@/entities/Article/model/types/article";
 import { UnknownAction } from "@reduxjs/toolkit";
 import { IArticlesPageSchema } from "../types/articlesPageSchema";
 import { articlesPageActions, articlesPageReducer } from "./articlesPageSlice";
 import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
+import { ArticleSortField, EArticleBlockType, EArticleType, EArticleView } from "@/entities/Article";
 
 const data = [
   {

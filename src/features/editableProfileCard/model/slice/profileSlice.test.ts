@@ -1,5 +1,5 @@
 import { ECountry } from "@/entities/Country";
-import { EValidateProfileError } from "../types/editableProfileCardSchema";
+import { EValidateProfileError } from "../consts/consts";
 import { IProfileSchema } from "../types/editableProfileCardSchema";
 import { profileActions, profileReducer } from "./profileSlice";
 import { ECurrency } from "@/entities/Currency";

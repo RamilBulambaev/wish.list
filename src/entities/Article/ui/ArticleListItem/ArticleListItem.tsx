@@ -2,11 +2,11 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./ArticleListItem.module.scss";
 import { useTranslation } from "react-i18next";
 import { HTMLAttributeAnchorTarget, memo } from "react";
+import { IArticle } from "../../model/types/article";
 import {
   EArticleBlockType,
   EArticleView,
-  IArticle,
-} from "../../model/types/article";
+} from "../../model/consts/articleConsts";
 import { Text } from "@/shared/ui/Text/Text";
 import IconEye from "@/shared/assets/icons/eye-20-20.svg";
 import { Icon } from "@/shared/ui/Icon/Icon";

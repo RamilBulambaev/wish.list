@@ -13,7 +13,7 @@ import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileF
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
-import { EValidateProfileError } from "../../model/types/editableProfileCardSchema";
+import { EValidateProfileError } from "../../model/consts/consts";
 import {
   DynamicModuleLoader,
   ReducersList,
