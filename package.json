@@ -80,6 +80,8 @@
     "json-server": "^0.17.4",
     "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.9.2",
+    "msw": "^2.7.0",
+    "msw-storybook-addon": "^2.0.4",
     "react-refresh": "^0.14.2",
     "reg-cli": "^0.18.9",
     "sass": "^1.49.9",
@@ -136,5 +138,10 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
