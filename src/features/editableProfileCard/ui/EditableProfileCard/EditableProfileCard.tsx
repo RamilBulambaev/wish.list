@@ -1,6 +1,6 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { memo, useCallback } from "react";
+import { memo, useCallback, useEffect } from "react";
 import { ECountry } from "@/entities/Country";
 import { ECurrency } from "@/entities/Currency";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";

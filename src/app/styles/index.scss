@@ -10,7 +10,9 @@ body {
   background: var(--bg-color);
 }
 
-.app {
+.app,
+.app_modal,
+.app_drawer {
   // background: var(--bg-color);
   font: var(--font-m);
   color: var(--primary-color);

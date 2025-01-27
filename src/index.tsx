@@ -19,6 +19,7 @@ createRoot(rootElement).render(
       v7_startTransition: true,
       v7_relativeSplatPath: true,
     }}
+    basename="/"
   >
     <StoreProvider>
       <ErrorBoundary>

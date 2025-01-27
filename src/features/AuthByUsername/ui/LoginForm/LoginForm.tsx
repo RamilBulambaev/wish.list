@@ -31,7 +31,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
-  console.log(username);
 
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
