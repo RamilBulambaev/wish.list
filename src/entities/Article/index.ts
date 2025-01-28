@@ -4,7 +4,7 @@ export {
   EArticleView,
   ArticleSortField,
   EArticleType,
-  EArticleBlockType
+  EArticleBlockType,
 } from "./model/consts/articleConsts";
 export type { IArticle } from "./model/types/article";
 export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
