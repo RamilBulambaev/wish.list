@@ -16,5 +16,7 @@
   "Некорректный регион": "Incorrect region",
   "Имя и фамилия обязательны": "First and last name are required",
   "Данные не указаны": "Data is not specified",
-  "Профиль не найден": "Profile not found"
+  "Профиль не найден": "Profile not found",
+  "Оцените профиль": "Rate the profile",
+  "Оставьте свой отзыв о профиле, это поможет улучшить качество": "Leave your feedback about the profile, it will help to improve the quality"
 }
