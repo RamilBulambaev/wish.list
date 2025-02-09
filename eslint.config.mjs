@@ -55,7 +55,7 @@ export default [
       "react-hooks/exhaustive-deps": "error",
       "@typescript-eslint/ban-ts-comment": "warn",
       "@typescript-eslint/no-explicit-any": "warn",
-      "plugin-path-checker-fsd-r/path-checker": "error",
+      "plugin-path-checker-fsd-r/path-checker": ["error", { alias: "@" }],
     },
   },
   {
