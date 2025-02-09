@@ -1,4 +1,4 @@
-import { IArticle } from "@/entities/Article/model/types/article";
+import { IArticle } from "@/entities/Article";
 import { UnknownAction } from "@reduxjs/toolkit";
 import { articleDetailsRecomendationsSchema } from "../types/articleDetailsRecomendationsSchema";
 import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";

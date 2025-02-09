@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import ArticleDetailsPage from "./ArticleDetailsPage";
-import { IArticle } from "@/entities/Article/model/types/article";
+import { IArticle } from "@/entities/Article";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { EArticleBlockType, EArticleType } from "@/entities/Article";
 
