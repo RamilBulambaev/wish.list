@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
+import { RoutePath } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { getCanEditArticle } from "../../model/selectors/article";
 import { getArticleDetailsData } from "@/entities/Article";
