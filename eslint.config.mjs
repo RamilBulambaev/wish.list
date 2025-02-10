@@ -56,7 +56,17 @@ export default [
       "@typescript-eslint/ban-ts-comment": "warn",
       "@typescript-eslint/no-explicit-any": "warn",
       "plugin-path-checker-fsd-r/path-checker": ["error", { alias: "@" }],
-      "plugin-path-checker-fsd-r/public-api-imports": ["error", { alias: "@" }],
+      "plugin-path-checker-fsd-r/public-api-imports": [
+        "error",
+        {
+          alias: "@",
+          testFilesPatterns: [
+            "**/*.test.*",
+            "**/*.story.*",
+            "**/StoreDecorator.tsx",
+          ],
+        },
+      ],
     },
   },
   {
