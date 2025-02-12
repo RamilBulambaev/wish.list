@@ -1,11 +1,11 @@
-import { ReduxStoreWithManager } from "@/app/providers/StoreProvider";
 import { ReactNode, useEffect } from "react";
 import { useStore } from "react-redux";
 import { useAppDispatch } from "../../hooks/useAppDispatch/useAppDispatch";
 import {
   StateSchema,
   StateSchemaKey,
-} from "@/app/providers/StoreProvider/config/StateSchema";
+  ReduxStoreWithManager,
+} from "@/app/providers/StoreProvider";
 import { Reducer } from "@reduxjs/toolkit";
 
 export type ReducersList = {

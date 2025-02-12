@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { RatingCard } from "@/entities/Rating";
 import { getUserAuthData } from "@/entities/User";
+// eslint-disable-next-line plugin-path-checker-fsd-r/layer-imports
 import { getProfileData } from "@/features/editableProfileCard";
 import {
   useGetProfileRating,

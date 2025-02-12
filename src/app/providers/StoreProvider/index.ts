@@ -5,6 +5,7 @@ import type {
   ReduxStoreWithManager,
   IThunkExtraArg,
   IThunkConfig,
+  StateSchemaKey,
 } from "./config/StateSchema";
 
 export { StoreProvider, createReduxStore };
@@ -16,4 +17,5 @@ export type {
   RootState,
   IThunkExtraArg,
   IThunkConfig,
+  StateSchemaKey,
 };
