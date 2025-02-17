@@ -6,7 +6,7 @@ import { ECurrency } from "@/entities/Currency";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useSelector } from "react-redux";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
+import { Text, TextTheme } from "@/shared/ui/Text";
 import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";

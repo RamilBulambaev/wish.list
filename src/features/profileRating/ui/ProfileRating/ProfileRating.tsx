@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import { RatingCard } from "@/entities/Rating";
 import { getUserAuthData } from "@/entities/User";
 // eslint-disable-next-line plugin-path-checker-fsd-r/layer-imports

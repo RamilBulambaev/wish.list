@@ -1,6 +1,6 @@
 import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import { ReactNode } from "react";
-import { Portal } from "@/shared/ui/Portal/Portal";
+import { Portal } from "@/shared/ui/Portal";
 import cls from "./Modal.module.scss";
 import { Overlay } from "../Overlay/Overlay";
 import { useModal } from "@/shared/lib/hooks/useModal/useModal";

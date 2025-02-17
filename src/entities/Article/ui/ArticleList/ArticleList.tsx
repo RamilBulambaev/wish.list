@@ -5,7 +5,7 @@ import { HTMLAttributeAnchorTarget, memo } from "react";
 import { IArticle } from "../../model/types/article";
 import { EArticleView } from "../../model/consts/articleConsts";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItem.skeleton";
-import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { Text, TextSize } from "@/shared/ui/Text";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 
 interface ArticleListProps {

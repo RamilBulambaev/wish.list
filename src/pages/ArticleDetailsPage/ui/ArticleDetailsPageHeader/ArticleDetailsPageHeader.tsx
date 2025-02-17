@@ -1,7 +1,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "@/shared/const/router";
 import { useSelector } from "react-redux";

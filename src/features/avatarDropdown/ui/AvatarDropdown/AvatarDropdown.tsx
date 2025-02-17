@@ -3,7 +3,7 @@ import cls from "./AvatarDropdown.module.scss";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback, useEffect } from "react";
 import { Dropdown } from "@/shared/ui/Popups";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Avatar } from "@/shared/ui/Avatar";
 import { RoutePath } from "@/shared/const/router";
 import {
   getUserAuthData,

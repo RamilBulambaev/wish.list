@@ -8,7 +8,7 @@ import {
 } from "../../model/selectors/articlesPageSelectors";
 import { getArticles } from "../../model/slices/articlesPageSlice";
 import { useTranslation } from "react-i18next";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
+import { Text, TextTheme } from "@/shared/ui/Text";
 
 interface ArticlesInfiniteListProps {
   className?: string;

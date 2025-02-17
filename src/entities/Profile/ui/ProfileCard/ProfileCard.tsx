@@ -1,11 +1,11 @@
 import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import cls from "./ProfileCard.module.scss";
 import { useTranslation } from "react-i18next";
-import { Text, TextAlighn, TextTheme } from "@/shared/ui/Text/Text";
-import { Input } from "@/shared/ui/Input/Input";
+import { Text, TextAlighn, TextTheme } from "@/shared/ui/Text";
+import { Input } from "@/shared/ui/Input";
 import { IProfile } from "../../model/types/profile";
-import { Loader } from "@/shared/ui/Loader/Loader";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Loader } from "@/shared/ui/Loader";
+import { Avatar } from "@/shared/ui/Avatar";
 import { CurrencySelect, ECurrency } from "@/entities/Currency";
 import { CountrySelect, ECountry } from "@/entities/Country";
 import { HStack, VStack } from "@/shared/ui/Stack";

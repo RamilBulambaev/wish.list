@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Popover } from "./Popover";
-import { Icon } from "@/shared/ui/Icon/Icon";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Icon } from "@/shared/ui/Icon";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import NotificationIcon from "@/shared/assets/icons/notification-20-20.svg";
 // eslint-disable-next-line plugin-path-checker-fsd-r/layer-imports
 import { NotificationList } from "@/entities/Notification";

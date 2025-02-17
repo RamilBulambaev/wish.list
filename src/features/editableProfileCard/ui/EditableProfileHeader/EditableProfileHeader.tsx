@@ -4,13 +4,13 @@ import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/entities/User";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { HStack } from "@/shared/ui/Stack";
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
 import { profileActions } from "../../model/slice/profileSlice";
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 
 interface EditableProfileHeaderProps {
   className?: string;
