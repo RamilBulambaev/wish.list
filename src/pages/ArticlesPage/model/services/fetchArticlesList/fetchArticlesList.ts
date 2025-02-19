@@ -1,7 +1,10 @@
-import { getArticlesPageType } from "./../../selectors/articlesPageSelectors";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
+ 
 import { IThunkConfig } from "@/app/providers/StoreProvider";
 import { EArticleType, IArticle } from "@/entities/Article";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { addQueryParams } from "@/shared/lib/url/addQueryParams/addQueryParams";
+
 import {
   getArticlesPageLimit,
   getArticlesPageNum,
@@ -9,7 +12,7 @@ import {
   getArticlesPageSearch,
   getArticlesPageSort,
 } from "../../selectors/articlesPageSelectors";
-import { addQueryParams } from "@/shared/lib/url/addQueryParams/addQueryParams";
+import { getArticlesPageType } from "./../../selectors/articlesPageSelectors";
 
 interface FetchArticlesListProps {
   replace?: boolean;

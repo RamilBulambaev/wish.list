@@ -1,9 +1,10 @@
 import { UnknownAction } from "@reduxjs/toolkit";
-import { IArticle } from "../types/article";
-import { EArticleBlockType, EArticleType } from "../consts/articleConsts";
-import { IArticleDetailsSchema } from "../types/articleDetailsSchema";
+
 import { articleDetailsReducer } from "./articleDetailsSlice";
+import { EArticleBlockType, EArticleType } from "../consts/articleConsts";
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
+import { IArticle } from "../types/article";
+import { IArticleDetailsSchema } from "../types/articleDetailsSchema";
 
 const data: IArticle = {
   id: "1",

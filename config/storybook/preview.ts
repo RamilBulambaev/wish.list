@@ -1,10 +1,14 @@
-import { SuspenseDecorator } from "./../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator";
-import { StoreDecorator } from "./../../src/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { RouterDecorator } from "./../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
-import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { withThemeByClassName } from "@storybook/addon-themes";
-import type { Preview } from "@storybook/react";
 import { initialize, mswLoader } from "msw-storybook-addon";
+
+import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
+import { RouterDecorator } from "./../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
+import { StoreDecorator } from "./../../src/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { SuspenseDecorator } from "./../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator";
+
+
+import type { Preview } from "@storybook/react";
+
 
 initialize();
 

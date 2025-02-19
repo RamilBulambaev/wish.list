@@ -1,7 +1,9 @@
 import axios from "axios";
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+
 import { ECountry } from "@/entities/Country";
 import { ECurrency } from "@/entities/Currency";
+import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+
 import { updateProfileData } from "./updateProfileData";
 import { EValidateProfileError } from "../../consts/consts";
 

@@ -1,5 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import { Meta, StoryObj } from "@storybook/react";
+
 import { Flex } from "./Flex";
 
 const meta: Meta<typeof Flex> = {

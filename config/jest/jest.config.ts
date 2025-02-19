@@ -3,8 +3,9 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from "jest";
 import path from "path";
+
+import type { Config } from "jest";
 
 const config: Config = {
   globals: { __IS_DEV__: true, __API__: "", __PROJECT__: "jest" },

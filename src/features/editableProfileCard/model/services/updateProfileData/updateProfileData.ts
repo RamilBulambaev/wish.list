@@ -1,9 +1,12 @@
-import { IThunkConfig } from "@/app/providers/StoreProvider";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+
+import { IThunkConfig } from "@/app/providers/StoreProvider";
+import { IProfile } from "@/entities/Profile";
+
 import { EValidateProfileError } from "../../consts/consts";
 import { getProfileForm } from "../../selectors/getProfileForm/getProfileForm";
 import { validateProfileData } from "../validateProfileData/validateProfileData";
-import { IProfile } from "@/entities/Profile";
+
 
 export const updateProfileData = createAsyncThunk<
   IProfile,

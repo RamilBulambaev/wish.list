@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Navbar } from "./Navbar";
+
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+
+import { Navbar } from "./Navbar";
 
 const meta: Meta<typeof Navbar> = {
   title: "widget/Navbar",

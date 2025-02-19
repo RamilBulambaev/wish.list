@@ -1,10 +1,13 @@
-import { ECountry } from "@/entities/Country";
-import { EValidateProfileError } from "../consts/consts";
-import { IProfileSchema } from "../types/editableProfileCardSchema";
-import { profileActions, profileReducer } from "./profileSlice";
-import { ECurrency } from "@/entities/Currency";
-import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 import { UnknownAction } from "@reduxjs/toolkit";
+
+import { ECountry } from "@/entities/Country";
+import { ECurrency } from "@/entities/Currency";
+
+import { profileActions, profileReducer } from "./profileSlice";
+import { EValidateProfileError } from "../consts/consts";
+import { updateProfileData } from "../services/updateProfileData/updateProfileData";
+import { IProfileSchema } from "../types/editableProfileCardSchema";
+
 
 const data = {
   username: "Ramil",

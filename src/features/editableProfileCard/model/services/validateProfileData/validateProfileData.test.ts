@@ -1,6 +1,8 @@
 import axios from "axios";
+
 import { ECountry } from "@/entities/Country";
 import { ECurrency } from "@/entities/Currency";
+
 import { validateProfileData } from "./validateProfileData";
 import { EValidateProfileError } from "../../consts/consts";
 

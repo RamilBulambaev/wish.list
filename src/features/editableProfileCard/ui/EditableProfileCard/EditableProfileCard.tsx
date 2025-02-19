@@ -1,27 +1,30 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { memo, useCallback, useEffect } from "react";
+import { useSelector } from "react-redux";
+
 import { ECountry } from "@/entities/Country";
 import { ECurrency } from "@/entities/Currency";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { useSelector } from "react-redux";
-import { Text, TextTheme } from "@/shared/ui/Text";
-import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
-import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
-import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
-import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
-import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
-import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
-import { EValidateProfileError } from "../../model/consts/consts";
+import { ProfileCard } from "@/entities/Profile";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {
   DynamicModuleLoader,
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { profileActions, profileReducer } from "../../model/slice/profileSlice";
-import { ProfileCard } from "@/entities/Profile";
-import { EditableProfileHeader } from "../EditableProfileHeader/EditableProfileHeader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { VStack } from "@/shared/ui/Stack";
+import { Text, TextTheme } from "@/shared/ui/Text";
+
+import { EValidateProfileError } from "../../model/consts/consts";
+import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
+import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
+import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
+import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
+import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
+import { profileActions, profileReducer } from "../../model/slice/profileSlice";
+import { EditableProfileHeader } from "../EditableProfileHeader/EditableProfileHeader";
+
 
 const reducers: ReducersList = {
   profile: profileReducer,

@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import ArticlesPage from "./ArticlesPage";
+
 import { IArticle } from "@/entities/Article";
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { EArticleBlockType, EArticleType } from "@/entities/Article";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+
+import ArticlesPage from "./ArticlesPage";
 
 const data = [
   {

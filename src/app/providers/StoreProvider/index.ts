@@ -1,5 +1,6 @@
 import { createReduxStore, AppDispatch, RootState } from "./config/store";
 import { StoreProvider } from "./ui/StoreProvider";
+
 import type {
   StateSchema,
   ReduxStoreWithManager,

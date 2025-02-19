@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
+
 import { ArticleList } from "./ArticleList";
-import { IArticle } from "../../model/types/article";
 import { EArticleView } from "../../model/consts/articleConsts";
+import { IArticle } from "../../model/types/article";
 
 const article = {
   id: "1",

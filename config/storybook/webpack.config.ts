@@ -1,7 +1,9 @@
 import path from "path";
-import { BuildPaths } from "./../build/types/config";
+
 import webpack, { DefinePlugin, RuleSetRule } from "webpack";
+
 import { buildCssLoaders } from "../build/loaders/buildCssLoader";
+import { BuildPaths } from "./../build/types/config";
 
 export const storybookWebpack = ({
   config,

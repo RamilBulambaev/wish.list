@@ -1,12 +1,15 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./ArticleViewSelector.module.scss";
-import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import { EArticleView } from "../../model/consts/articleConsts";
+import { useTranslation } from "react-i18next";
+
+
 import ListIcon from "@/shared/assets/icons/list-24-24.svg";
 import TitledIcon from "@/shared/assets/icons/tiled-24-24.svg";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Icon } from "@/shared/ui/Icon";
+
+import cls from "./ArticleViewSelector.module.scss";
+import { EArticleView } from "../../model/consts/articleConsts";
 
 interface ArticleViewSelectorProps {
   className?: string;

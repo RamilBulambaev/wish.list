@@ -1,10 +1,13 @@
-import globals from "globals";
+import pluginConarti from "@conarti/eslint-plugin-feature-sliced";
 import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
 import pluginI18next from "eslint-plugin-i18next";
-import pluginReactHooks from "eslint-plugin-react-hooks";
+import pluginImport from "eslint-plugin-import";
 import pathCheckerPlugin from "eslint-plugin-plugin-path-checker-fsd-r";
+import pluginReact from "eslint-plugin-react";
+import pluginReactHooks from "eslint-plugin-react-hooks";
+import unusedImports from "eslint-plugin-unused-imports";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -28,6 +31,9 @@ export default [
     plugins: {
       "react-hooks": pluginReactHooks,
       "plugin-path-checker-fsd-r": pathCheckerPlugin,
+      "unused-imports": unusedImports,
+      "@conarti/feature-sliced": pluginConarti,
+      import: pluginImport,
     },
     rules: {
       "react/jsx-indent": [2, 2],
@@ -55,6 +61,16 @@ export default [
       "react-hooks/exhaustive-deps": "error",
       "@typescript-eslint/ban-ts-comment": "warn",
       "@typescript-eslint/no-explicit-any": "warn",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
       "plugin-path-checker-fsd-r/path-checker": ["error", { alias: "@" }],
       "plugin-path-checker-fsd-r/layer-imports": [
         "error",
@@ -74,6 +90,35 @@ export default [
           ],
         },
       ],
+      // "@conarti/feature-sliced/layers-slices": "error",
+      "@conarti/feature-sliced/absolute-relative": "off",
+      "@conarti/feature-sliced/public-api": "error",
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "builtin", // Встроенные модули (fs, path и т.д.)
+            "external", // Сторонние библиотеки из node_modules
+            "internal", // Внутренние импорты из проекта
+            ["parent", "sibling", "index"], // Вложенные импорты
+            "object",
+            "type",
+          ],
+          pathGroups: [
+            {
+              pattern: "@/**",
+              group: "internal",
+              position: "before",
+            },
+          ],
+          pathGroupsExcludedImportTypes: ["builtin"],
+          "newlines-between": "always",
+          alphabetize: {
+            order: "asc", // Импорты сортируются в алфавитном порядке
+            caseInsensitive: true,
+          },
+        },
+      ],
     },
   },
   {
@@ -81,6 +126,9 @@ export default [
     rules: {
       "max-len": "off", // Отключаем max-len для тестов и stories
       "no-unused-vars": "warn",
+      "@conarti/feature-sliced/layers-slices": "off",
+      "@conarti/feature-sliced/absolute-relative": "off",
+      "@conarti/feature-sliced/public-api": "off",
     },
   },
 ];

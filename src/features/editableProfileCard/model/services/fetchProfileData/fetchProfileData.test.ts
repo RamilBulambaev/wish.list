@@ -1,8 +1,10 @@
 import axios from "axios";
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { fetchProfileData } from "./fetchProfileData";
+
 import { ECountry } from "@/entities/Country";
 import { ECurrency } from "@/entities/Currency";
+import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+
+import { fetchProfileData } from "./fetchProfileData";
 
 jest.mock("axios");
 

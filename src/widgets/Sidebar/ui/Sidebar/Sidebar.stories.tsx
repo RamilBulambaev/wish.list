@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Sidebar } from "./Sidebar";
+
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+
+import { Sidebar } from "./Sidebar";
 
 const meta: Meta<typeof Sidebar> = {
   title: "widget/Sidebar",

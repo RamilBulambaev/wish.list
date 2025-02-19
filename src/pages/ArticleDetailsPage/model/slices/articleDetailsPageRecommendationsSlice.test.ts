@@ -1,9 +1,12 @@
-import { IArticle } from "@/entities/Article";
 import { UnknownAction } from "@reduxjs/toolkit";
-import { articleDetailsRecomendationsSchema } from "../types/articleDetailsRecomendationsSchema";
-import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";
-import { articleDetailsPageRecommendationsReducer } from "./articleDetailsPageRecommendationsSlice";
+
+import { IArticle } from "@/entities/Article";
 import { EArticleBlockType, EArticleType } from "@/entities/Article";
+
+import { articleDetailsPageRecommendationsReducer } from "./articleDetailsPageRecommendationsSlice";
+import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";
+import { articleDetailsRecomendationsSchema } from "../types/articleDetailsRecomendationsSchema";
+
 
 const data = [
   {

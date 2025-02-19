@@ -1,8 +1,11 @@
  
-import cls from "./Code.module.scss";
 import { memo, useCallback } from "react";
-import { Button, ButtonTheme } from "../Button/Button";
+
 import CopyIcon from "@/shared/assets/icons/copy-20-20.svg";
+
+import cls from "./Code.module.scss";
+import { Button, ButtonTheme } from "../Button/Button";
+
 
 interface CodeProps {
   className?: string;

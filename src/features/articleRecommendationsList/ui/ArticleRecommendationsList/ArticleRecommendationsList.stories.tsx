@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { http, HttpResponse } from "msw";
+
 import { ArticleRecommendationsList } from "./ArticleRecommendationsList";
 
 const article = {

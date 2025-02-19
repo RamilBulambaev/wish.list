@@ -1,6 +1,7 @@
-import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { ReactNode } from "react";
 import { createPortal } from "react-dom";
+
+import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 interface PortalProps {
   children: ReactNode;

@@ -1,8 +1,11 @@
 import { UnknownAction } from "@reduxjs/toolkit";
-import { IArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
+
+import { IComment } from "@/entities/Comment";
+
 import { articleDetailsCommentsReducer } from "./articleDetailsCommentsSlice";
 import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { IComment } from "@/entities/Comment";
+import { IArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
+
 
 const data = [
   {

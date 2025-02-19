@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+
 import ProfileRating from "./ProfileRating";
 
 const meta: Meta<typeof ProfileRating> = {

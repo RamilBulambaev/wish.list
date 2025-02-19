@@ -1,14 +1,17 @@
-import { IArticle } from "@/entities/Article";
 import { UnknownAction } from "@reduxjs/toolkit";
-import { IArticlesPageSchema } from "../types/articlesPageSchema";
-import { articlesPageActions, articlesPageReducer } from "./articlesPageSlice";
-import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
+
+import { IArticle } from "@/entities/Article";
 import {
   ArticleSortField,
   EArticleBlockType,
   EArticleType,
   EArticleView,
 } from "@/entities/Article";
+
+import { articlesPageActions, articlesPageReducer } from "./articlesPageSlice";
+import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
+import { IArticlesPageSchema } from "../types/articlesPageSchema";
+
 
 const data = [
   {

@@ -1,11 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ArticleDetails } from "./ArticleDetails";
+
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { IArticle } from "../../model/types/article";
+
+import { ArticleDetails } from "./ArticleDetails";
 import {
   EArticleBlockType,
   EArticleType,
 } from "../../model/consts/articleConsts";
+import { IArticle } from "../../model/types/article";
 
 const article: IArticle = {
   id: "1",

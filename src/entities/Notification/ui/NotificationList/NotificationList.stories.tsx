@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { NotificationList } from "./NotificationList";
 import { http, HttpResponse } from "msw";
+
+import { NotificationList } from "./NotificationList";
 import { Notification } from "../../model/types/notification";
 
 const notifications: Notification[] = [

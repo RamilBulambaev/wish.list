@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+
 import { ArticleTypeTabs } from "./ArticleTypeTabs";
 import { EArticleType } from "../../model/consts/articleConsts";
 

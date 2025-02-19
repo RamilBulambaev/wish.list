@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react/*";
+
 import { ECountry } from "@/entities/Country";
 import { ECurrency } from "@/entities/Currency";
-import { ProfilePage } from "..";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+
+import { ProfilePage } from "..";
 
 const meta: Meta<typeof ProfilePage> = {
   title: "pages/ProfilePage",

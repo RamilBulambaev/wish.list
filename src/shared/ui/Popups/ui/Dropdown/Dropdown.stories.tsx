@@ -1,6 +1,7 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { Dropdown } from "./Dropdown";
 import { Button } from "@headlessui/react";
+import { Meta, StoryObj } from "@storybook/react";
+
+import { Dropdown } from "./Dropdown";
 
 const meta: Meta<typeof Dropdown> = {
   title: "shared/Dropdown",

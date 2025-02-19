@@ -1,11 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Popover } from "./Popover";
-import { Icon } from "@/shared/ui/Icon";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import NotificationIcon from "@/shared/assets/icons/notification-20-20.svg";
+import { http, HttpResponse } from "msw";
+
 // eslint-disable-next-line plugin-path-checker-fsd-r/layer-imports
 import { NotificationList } from "@/entities/Notification";
-import { http, HttpResponse } from "msw";
+import NotificationIcon from "@/shared/assets/icons/notification-20-20.svg";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
+import { Icon } from "@/shared/ui/Icon";
+
+import { Popover } from "./Popover";
+ 
+
 
 const notifications = [
   {
