@@ -3,9 +3,8 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-
 import { getArticleDetailsData } from "@/entities/Article";
-import { RoutePath } from "@/shared/const/router";
+import { getRouteArticleEdit, getRouteArticles } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { HStack } from "@/shared/ui/Stack";
@@ -24,11 +23,13 @@ export const ArticleDetailsPageHeader = memo(
     const article = useSelector(getArticleDetailsData);
 
     const onBackToList = useCallback(() => {
-      navigate(RoutePath.articles);
+      navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-      navigate(`${RoutePath.article_details}${article?.id}/edit`);
+      if (article?.id) {
+        navigate(getRouteArticleEdit(article.id));
+      }
     }, [navigate, article]);
 
     return (
