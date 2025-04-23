@@ -4,15 +4,11 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 
- 
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { EArticleView, IArticle } from "@/entities/Article";
-import {
-  ArticleSortField,
-  EArticleType,
-} from "@/entities/Article";
+import { ArticleSortField, EArticleType } from "@/entities/Article";
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
-import { SortOrder } from "@/shared/types";
+import { SortOrder } from "@/shared/types/sort";
 
 import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
 import { IArticlesPageSchema } from "../types/articlesPageSchema";
