@@ -1,9 +1,7 @@
- 
 import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
- 
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { getUIScrollByPath, uiActions } from "@/features/UI";
 import { classNames } from "@/shared/lib/classNames/classNames";
