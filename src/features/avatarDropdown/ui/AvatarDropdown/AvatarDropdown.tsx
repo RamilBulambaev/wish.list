@@ -9,12 +9,9 @@ import {
   userActions,
 } from "@/entities/User";
 import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Dropdown } from "@/shared/ui/Popups";
-
-import cls from "./AvatarDropdown.module.scss";
 
 interface AvatarDropdownProps {
   className?: string;
@@ -39,7 +36,7 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
 
   return (
     <Dropdown
-      className={classNames(cls.AvatarDropdown, {}, [className])}
+      className={className}
       items={[
         ...(isAdminPanelAviable
           ? [{ content: t("Админка"), href: getRouteAdmin() }]
