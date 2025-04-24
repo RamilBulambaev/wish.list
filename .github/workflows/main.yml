@@ -40,9 +40,9 @@
 name: linting, testing, building
 on:
   push:
-    branches: [master]
+    branches: [ master ]
   pull_request:
-    branches: [master]
+    branches: [ master ]
 permissions:
   contents: write
   pages: write
@@ -54,32 +54,32 @@ jobs:
   build-and-ui-testing:
     runs-on: ubuntu-latest
     concurrency: ci-${{ github.ref }}
-    environment: github-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [ 20.x ]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci --force
-      - run: npm run build:prod
+      - name: install modules
+        run: npm ci --force
+      - name: build production project
+        run: npm run build:prod
         if: always()
-      - run: npm run storybook:build
+      - name: build storybook
+        run: npm run storybook:build
         if: always()
-      - run: npm run test:ui:ci
+      - name: screenshot testing
+        run: npm run test:ui:ci
         if: always()
-      - run: npm run test:ui:report
+      - name: Generate HTML report
+        run: npm run test:ui:report
         if: always()
-      - name: Debug .loki
-        run: ls -la .loki || echo ".loki not found"
-      - name: Check .loki exists
-        run: |
-          if [ ! -d ".loki" ]; then
-            echo ".loki folder not found!"
-            exit 1
-          fi
       - name: Setup Pages
         uses: actions/configure-pages@v2
         if: always()
@@ -87,8 +87,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         if: always()
         with:
-          path: ".loki"
-          name: github-pages
+          path: '.loki'
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
@@ -98,7 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [ 20.x ]
     steps:
       - uses: actions/checkout@v4
       - name: Staring Node.js ${{ matrix.node-version }}
