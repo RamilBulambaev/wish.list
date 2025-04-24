@@ -1,5 +1,4 @@
 import { memo } from "react";
-import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
 import { ArticleDetails } from "@/entities/Article";
@@ -28,7 +27,6 @@ const reducers: ReducersList = {
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-  const { t } = useTranslation("article-details");
   const { id } = useParams<{ id: string }>();
 
   if (!id) {

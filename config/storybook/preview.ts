@@ -1,14 +1,12 @@
 import { withThemeByClassName } from "@storybook/addon-themes";
-import { initialize, mswLoader } from "msw-storybook-addon";
+import { initialize, mswDecorator, mswLoader } from "msw-storybook-addon";
 
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { RouterDecorator } from "./../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { StoreDecorator } from "./../../src/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { SuspenseDecorator } from "./../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator";
 
-
 import type { Preview } from "@storybook/react";
-
 
 initialize();
 
@@ -25,6 +23,7 @@ const preview: Preview = {
     },
   },
   decorators: [
+    mswDecorator,
     SuspenseDecorator,
     StyleDecorator,
     withThemeByClassName({
