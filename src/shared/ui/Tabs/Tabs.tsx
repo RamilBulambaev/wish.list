@@ -31,6 +31,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
     <div className={classNames(cls.Tabs, {}, [className])}>
       {tabs.map((tab) => (
         <Card
+          data-testid={`ArticleTypeTabs.${tab.value}`}
           key={tab.value}
           className={cls.tab}
           theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}

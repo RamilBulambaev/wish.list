@@ -10,8 +10,6 @@ import { IArticle } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItem.skeleton";
 
-
-
 interface ArticleListProps {
   className?: string;
   articles: IArticle[];
@@ -47,7 +45,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+    <div
+      className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+      data-testid={"ArticleList"}
+    >
       {articles.map((item) => (
         <ArticleListItem
           article={item}
