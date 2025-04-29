@@ -1,4 +1,5 @@
-import { selectByTestId } from "cypress/helpers/selectByTesrId";
+// eslint-disable-next-line import/order
+import { selectByTestId } from "../../helpers/selectByTestId";
 
 import { User } from "@/entities/User";
 /* eslint-disable @typescript-eslint/no-namespace */
