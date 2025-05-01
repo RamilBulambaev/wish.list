@@ -1,10 +1,16 @@
+/* eslint-disable i18next/no-literal-string */
 import { useTranslation } from "react-i18next";
 
 import { Page } from "@/widgets/Page";
 
 function MainPage() {
   const { t } = useTranslation("main");
-  return <Page dataTestId="MainPage">{t("Главная страница")}</Page>;
+  return (
+    <Page dataTestId="MainPage">
+      <div>sadfasd</div>
+      {t("Главная страница")}
+    </Page>
+  );
 }
 
 export default MainPage;
