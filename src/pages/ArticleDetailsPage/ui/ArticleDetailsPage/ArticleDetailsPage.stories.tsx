@@ -2,6 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { IArticle } from "@/entities/Article";
 import { EArticleBlockType, EArticleType } from "@/entities/Article";
+import { FeatureFlagsDecorator } from "@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 import ArticleDetailsPage from "./ArticleDetailsPage";
@@ -135,79 +136,98 @@ type Story = StoryObj<typeof ArticleDetailsPage>;
 
 export const Common: Story = {
   args: {},
-  decorators: StoreDecorator({
-    ArticleDetails: { data: data[0] },
-    articleDetailsPage: {
-      comments: {
-        ids: ["1", "2"],
-        entities: {
-          "1": {
-            id: "1",
-            text: "Комментарий 1",
-            user: { id: "1", username: "User1" },
-          },
-          "2": {
-            id: "2",
-            text: "Комментарий 2",
-            user: { id: "2", username: "User2" },
+  decorators: [
+    FeatureFlagsDecorator({ isArticleRatingEnabled: true }),
+    StoreDecorator({
+      ArticleDetails: { data: data[0] },
+      user: {
+        _inited: true,
+        authData: {
+          id: "1",
+          username: "user",
+          features: {
+            isArticleRatingEnabled: true,
           },
         },
-        isLoading: false,
-        error: undefined,
       },
-      recommendations: {
-        isLoading: false,
-        entities: {
-          "1": data[0],
-          "2": data[1],
-          "3": data[2],
-          "4": data[3],
+      articleDetailsPage: {
+        comments: {
+          ids: ["1", "2"],
+          entities: {
+            "1": {
+              id: "1",
+              text: "Комментарий 1",
+              user: { id: "1", username: "User1" },
+            },
+            "2": {
+              id: "2",
+              text: "Комментарий 2",
+              user: { id: "2", username: "User2" },
+            },
+          },
+          isLoading: false,
+          error: undefined,
         },
-        ids: ["1", "2", "3", "4"],
+        recommendations: {
+          isLoading: false,
+          entities: {
+            "1": data[0],
+            "2": data[1],
+            "3": data[2],
+            "4": data[3],
+          },
+          ids: ["1", "2", "3", "4"],
+        },
       },
-    },
-  }),
+    }),
+  ],
 };
 
 export const Edit: Story = {
   args: {},
-  decorators: StoreDecorator({
-    ArticleDetails: { data: data[0] },
-    user: {
-      _inited: true,
-      authData: {
-        id: "1",
-        username: "user",
-      },
-    },
-    articleDetailsPage: {
-      comments: {
-        ids: ["1", "2"],
-        entities: {
-          "1": {
-            id: "1",
-            text: "Комментарий 1",
-            user: { id: "1", username: "User1" },
-          },
-          "2": {
-            id: "2",
-            text: "Комментарий 2",
-            user: { id: "2", username: "User2" },
+  decorators: [
+    FeatureFlagsDecorator({ isArticleRatingEnabled: true }),
+    StoreDecorator({
+      ArticleDetails: { data: data[0] },
+      user: {
+        _inited: true,
+        authData: {
+          id: "1",
+          username: "user",
+          features: {
+            isArticleRatingEnabled: true,
           },
         },
-        isLoading: false,
-        error: undefined,
       },
-      recommendations: {
-        isLoading: false,
-        entities: {
-          "1": data[0],
-          "2": data[1],
-          "3": data[2],
-          "4": data[3],
+      articleDetailsPage: {
+        comments: {
+          ids: ["1", "2"],
+          entities: {
+            "1": {
+              id: "1",
+              text: "Комментарий 1",
+              user: { id: "1", username: "User1" },
+            },
+            "2": {
+              id: "2",
+              text: "Комментарий 2",
+              user: { id: "2", username: "User2" },
+            },
+          },
+          isLoading: false,
+          error: undefined,
         },
-        ids: ["1", "2", "3", "4"],
+        recommendations: {
+          isLoading: false,
+          entities: {
+            "1": data[0],
+            "2": data[1],
+            "3": data[2],
+            "4": data[3],
+          },
+          ids: ["1", "2", "3", "4"],
+        },
       },
-    },
-  }),
+    }),
+  ],
 };
