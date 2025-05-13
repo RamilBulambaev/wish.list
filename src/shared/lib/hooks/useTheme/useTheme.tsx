@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
-import { LOCAL_STORAGE_THEME_KEY } from "@/shared/const/localstorage";
+// eslint-disable-next-line plugin-path-checker-fsd-r/layer-imports
+import { useJsonSettings } from "@/entities/User";
 import { Theme } from "@/shared/const/theme";
 
 import { ThemeContext } from "../../context/ThemeContext";
@@ -12,9 +13,9 @@ interface useThemeResult {
 
 export function useTheme(): useThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
+  const { theme: defaultTheme } = useJsonSettings();
 
-  document.body.className =
-    localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || Theme.LIGHT;
+  document.body.className = defaultTheme || Theme.LIGHT;
 
   const toggleTheme = (saveAction?: (theme: Theme) => void) => {
     let newTheme: Theme;
