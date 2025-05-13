@@ -7,8 +7,6 @@ import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
 
-
-
 import { AppRouter } from "./providers/router";
 import { classNames } from "../shared/lib/classNames/classNames";
 
