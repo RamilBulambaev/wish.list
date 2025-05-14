@@ -736,7 +736,8 @@
       "jsonSettings": {
         "theme": "app_blue_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://steamuserimages-a.akamaihd.net/ugc/2053112621216575909/C5C81E5421996EEAB0A481BAB988C6039A9FD981/?imw=512&amp;imh=512&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true"
     },
